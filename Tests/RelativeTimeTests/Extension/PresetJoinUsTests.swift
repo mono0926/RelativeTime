@@ -38,7 +38,7 @@ class PresetJoinUsTests: XCTestCase {
     }
 
     func test_Within7Days() {
-        XCTAssertEqual(now.addingTimeInterval(-(3600*38+1)).rt.relative, "Yesterday")
+        XCTAssertEqual(now.addingTimeInterval(-(3600*38+1)).rt.relative, "Thursday")
         XCTAssertEqual(now.addingTimeInterval(-(3600*(24*7+14))).rt.relative, "Saturday")
         XCTAssertNotEqual(now.addingTimeInterval(-(3600*(24*7+14)+1)).rt.relative, "Saturday")
     }
