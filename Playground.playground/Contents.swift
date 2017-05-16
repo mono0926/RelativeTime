@@ -18,10 +18,10 @@ now.rt.relative // Not "Just now"
 
 // Use custom
 struct MyDefault: DefaultRepresentationProtocol {
-    var representation: ((Date, Bundle) -> String) { return { date, _ in "defaultの\(date)(　´･‿･｀)" } }
+    var representation: RepresentationType { return { date, _ in "defaultの\(date)(　´･‿･｀)" } }
 }
 struct MyRepresentation: ThresholdRepresentationProtocol {
-    var representation: ((Date, Bundle) -> String) { return { date, _ in "\(date)(　´･‿･｀)" } }
+    var representation: RepresentationType { return { date, _ in "\(date)(　´･‿･｀)" } }
     var upTo: MyThreshold { return MyThreshold() }
 
 }

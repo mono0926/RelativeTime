@@ -8,8 +8,10 @@
 
 import Foundation
 
+public typealias RepresentationType = ((Date, Bundle) -> String)
+
 public protocol DefaultRepresentationProtocol {
-    var representation: ((Date, Bundle) -> String) { get }
+    var representation: RepresentationType { get }
 }
 public protocol ThresholdRepresentationProtocol: DefaultRepresentationProtocol {
     associatedtype Threshold: ThresholdProtocol
@@ -17,16 +19,16 @@ public protocol ThresholdRepresentationProtocol: DefaultRepresentationProtocol {
 }
 
 public struct DefaultRepresentation: DefaultRepresentationProtocol {
-    public let representation: ((Date, Bundle) -> String)
-    init(_ representation: @escaping ((Date, Bundle) -> String)) {
+    public let representation: RepresentationType
+    init(_ representation: @escaping RepresentationType) {
         self.representation = representation
     }
 }
 
 public struct ThresholdRepresentation: ThresholdRepresentationProtocol {
-    public let representation: ((Date, Bundle) -> String)
+    public let representation: RepresentationType
     public let upTo: Threshold
-    init(upTo: Threshold, _ representation: @escaping ((Date, Bundle) -> String)) {
+    init(upTo: Threshold, _ representation: @escaping RepresentationType) {
         self.upTo = upTo
         self.representation = representation
     }

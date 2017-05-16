@@ -92,10 +92,10 @@ class DateExtensionTests: XCTestCase {
 }
 
 struct MyDefault: DefaultRepresentationProtocol {
-    var representation: ((Date, Bundle) -> String) { return { _ in "default(　´･‿･｀)" } }
+    var representation: RepresentationType { return { _ in "default(　´･‿･｀)" } }
 }
 struct MyRepresentation: ThresholdRepresentationProtocol {
-    var representation: ((Date, Bundle) -> String) { return { _ in "(　´･‿･｀)" } }
+    var representation: RepresentationType { return { _ in "(　´･‿･｀)" } }
     var upTo: MyThreshold { return MyThreshold() }
 
 }
