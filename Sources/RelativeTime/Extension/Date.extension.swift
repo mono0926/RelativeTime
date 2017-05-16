@@ -47,23 +47,23 @@ extension Extension where Base == Date {
         return digitYearDateFormatter.string(from: base)
     }
     var dayOfWeek: String {
-        return NSLocalizedString(weekFormatter.string(from: base).capitalized, bundle: RelativeTimeBundle.bundle, comment: "")
+        return NSLocalizedString(weekFormatter.string(from: base).capitalized, bundle: RTBundle.bundle, comment: "")
     }
     func isSameDay(_ date: Date) -> Bool {
         return Calendar.current.isDateInToday(date)
     }
 
-    public var relativeTime: String {
-        return relativeTime(RelativeTime.defaultConfiguration)
+    public var relative: String {
+        return relative(RelativeTime.defaultConfiguration)
     }
 
-    public func relativeTime<T>(_ rt: RelativeTime.Configuration<T>) -> String {
+    public func relative<T>(_ rt: Configuration<T>) -> String {
         let now = rt.now()
         for r in rt.representations {
             if r.upTo.within(date: base, now: now) {
-                return r.result(base)
+                return r.representation(base)
             }
         }
-        return rt.defaultRepresentation.result(base)
+        return rt.defaultRepresentation.representation(base)
     }
 }

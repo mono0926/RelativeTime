@@ -37,68 +37,68 @@ class DateExtensionTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        RelativeTime.defaultConfiguration.representations = RelativeTime.Preset.chat1
+        RelativeTime.defaultConfiguration.representations = Preset.chat1
     }
 
     func test_JustNow() {
-        XCTAssertEqual(now.rt.relativeTime, "Just now")
-        XCTAssertEqual(now.addingTimeInterval(-10).rt.relativeTime, "Just now")
-        XCTAssertNotEqual(now.addingTimeInterval(-11).rt.relativeTime, "Just now")
+        XCTAssertEqual(now.rt.relative, "Just now")
+        XCTAssertEqual(now.addingTimeInterval(-10).rt.relative, "Just now")
+        XCTAssertNotEqual(now.addingTimeInterval(-11).rt.relative, "Just now")
     }
 
     func test_JustNow_Nothing() {
-        RelativeTime.defaultConfiguration.representations = RelativeTime.Preset.chat2
-        XCTAssertEqual(now.rt.relativeTime, "14:00")
-        XCTAssertEqual(now.addingTimeInterval(-10).rt.relativeTime, "13:59")
-        XCTAssertNotEqual(now.addingTimeInterval(-11).rt.relativeTime, "Just now")
+        RelativeTime.defaultConfiguration.representations = Preset.chat2
+        XCTAssertEqual(now.rt.relative, "14:00")
+        XCTAssertEqual(now.addingTimeInterval(-10).rt.relative, "13:59")
+        XCTAssertNotEqual(now.addingTimeInterval(-11).rt.relative, "Just now")
     }
 
     func test_Within1Day() {
-        XCTAssertEqual(now.addingTimeInterval(-11).rt.relativeTime, "13:59")
-        XCTAssertEqual(now.addingTimeInterval(-3600*14).rt.relativeTime, "00:00")
-        XCTAssertNotEqual(now.addingTimeInterval(-(3600*14+1)).rt.relativeTime, "23:59")
+        XCTAssertEqual(now.addingTimeInterval(-11).rt.relative, "13:59")
+        XCTAssertEqual(now.addingTimeInterval(-3600*14).rt.relative, "00:00")
+        XCTAssertNotEqual(now.addingTimeInterval(-(3600*14+1)).rt.relative, "23:59")
     }
 
     func test_Within7Days() {
-        XCTAssertEqual(now.addingTimeInterval(-(3600*14+1)).rt.relativeTime, "Friday")
-        XCTAssertEqual(now.addingTimeInterval(-(3600*(24*7+14))).rt.relativeTime, "Saturday")
-        XCTAssertNotEqual(now.addingTimeInterval(-(3600*(24*7+14)+1)).rt.relativeTime, "Saturday")
+        XCTAssertEqual(now.addingTimeInterval(-(3600*14+1)).rt.relative, "Friday")
+        XCTAssertEqual(now.addingTimeInterval(-(3600*(24*7+14))).rt.relative, "Saturday")
+        XCTAssertNotEqual(now.addingTimeInterval(-(3600*(24*7+14)+1)).rt.relative, "Saturday")
     }
 
     func test_Within1Year() {
-        XCTAssertEqual(now.addingTimeInterval(-(3600*(24*7+14)+1)).rt.relativeTime, "3/17")
-        XCTAssertEqual(date2017Start.rt.relativeTime, "1/1")
-        XCTAssertNotEqual(date2017Start.addingTimeInterval(-1).rt.relativeTime, "1/1")
+        XCTAssertEqual(now.addingTimeInterval(-(3600*(24*7+14)+1)).rt.relative, "3/17")
+        XCTAssertEqual(date2017Start.rt.relative, "1/1")
+        XCTAssertNotEqual(date2017Start.addingTimeInterval(-1).rt.relative, "1/1")
     }
 
     func test_Default() {
-        XCTAssertEqual(date2017Start.addingTimeInterval(-1).rt.relativeTime, "2016/12/31")
+        XCTAssertEqual(date2017Start.addingTimeInterval(-1).rt.relative, "2016/12/31")
     }
 
     func test_Custom() {
         RelativeTime.defaultConfiguration.representations =
-            [RelativeTime.Representation(upTo: RelativeTime.Threshold.seconds(10)) { date in
+            [ThresholdRepresentation(upTo: Threshold.seconds(10)) { date in
                 return "\(date)(　´･‿･｀)"
                 }]
-        XCTAssertTrue(now.rt.relativeTime.hasSuffix("(　´･‿･｀)"))
+        XCTAssertTrue(now.rt.relative.hasSuffix("(　´･‿･｀)"))
     }
 
     func test_Custom2() {
-        let rt = RelativeTime.Configuration(defaultRepresentation: MyDefault(),
+        let rt = Configuration(defaultRepresentation: MyDefault(),
                                            representations: [MyRepresentation()],
                                            now: { self.now })
-        XCTAssertEqual(now.rt.relativeTime(rt), "(　´･‿･｀)")
+        XCTAssertEqual(now.rt.relative(rt), "(　´･‿･｀)")
     }
 }
 
-struct MyDefault: RelativeTimeDefaultRepresentation {
-    var result: ((Date) -> String) { return { _ in "default(　´･‿･｀)" } }
+struct MyDefault: DefaultRepresentationProtocol {
+    var representation: ((Date) -> String) { return { _ in "default(　´･‿･｀)" } }
 }
-struct MyRepresentation: RelativeTimeRepresentation {
-    var result: ((Date) -> String) { return { _ in "(　´･‿･｀)" } }
+struct MyRepresentation: ThresholdRepresentationProtocol {
+    var representation: ((Date) -> String) { return { _ in "(　´･‿･｀)" } }
     var upTo: MyThreshold { return MyThreshold() }
 
 }
-struct MyThreshold: RelativeTimeThreshold {
+struct MyThreshold: ThresholdProtocol {
     func within(date: Date, now: Date) -> Bool { return true }
 }
