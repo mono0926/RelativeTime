@@ -46,8 +46,8 @@ extension Extension where Base == Date {
     var digitYearDate: String {
         return digitYearDateFormatter.string(from: base)
     }
-    var dayOfWeek: String {
-        return NSLocalizedString(weekFormatter.string(from: base).capitalized, bundle: RTBundle.bundle, comment: "")
+    func dayOfWeek(bundle: Bundle = RTBundle.bundle) -> String {
+        return NSLocalizedString(weekFormatter.string(from: base).capitalized, bundle: bundle, comment: "")
     }
     func isSameDay(_ date: Date) -> Bool {
         return Calendar.current.isDateInToday(date)
