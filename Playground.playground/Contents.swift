@@ -13,15 +13,15 @@ now.addingTimeInterval(-10000000).rt.relative
 now.addingTimeInterval(-100000000).rt.relative
 
 // Use other preset
-RelativeTime.defaultConfiguration.representations = Preset.chat2
+RelativeTime.defaultConfiguration.representations = Preset.JoinUs.usersList
 now.rt.relative // Not "Just now"
 
 // Use custom
 struct MyDefault: DefaultRepresentationProtocol {
-    var representation: ((Date) -> String) { return { date in "defaultの\(date)(　´･‿･｀)" } }
+    var representation: ((Date, Bundle) -> String) { return { date, _ in "defaultの\(date)(　´･‿･｀)" } }
 }
 struct MyRepresentation: ThresholdRepresentationProtocol {
-    var representation: ((Date) -> String) { return { date in "\(date)(　´･‿･｀)" } }
+    var representation: ((Date, Bundle) -> String) { return { date, _ in "\(date)(　´･‿･｀)" } }
     var upTo: MyThreshold { return MyThreshold() }
 
 }

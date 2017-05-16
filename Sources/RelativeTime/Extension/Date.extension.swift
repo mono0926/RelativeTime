@@ -57,13 +57,13 @@ extension Extension where Base == Date {
         return relative(RelativeTime.defaultConfiguration)
     }
 
-    public func relative<T>(_ rt: Configuration<T>) -> String {
-        let now = rt.now()
-        for r in rt.representations {
+    public func relative<T>(_ configuration: Configuration<T>) -> String {
+        let now = configuration.now()
+        for r in configuration.representations {
             if r.upTo.within(date: base, now: now) {
-                return r.representation(base)
+                return r.representation(base, configuration.bundle)
             }
         }
-        return rt.defaultRepresentation.representation(base)
+        return configuration.defaultRepresentation.representation(base, configuration.bundle)
     }
 }

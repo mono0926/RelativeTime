@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol DefaultRepresentationProtocol {
-    var representation: ((Date) -> String) { get }
+    var representation: ((Date, Bundle) -> String) { get }
 }
 public protocol ThresholdRepresentationProtocol: DefaultRepresentationProtocol {
     associatedtype Threshold: ThresholdProtocol
@@ -17,16 +17,16 @@ public protocol ThresholdRepresentationProtocol: DefaultRepresentationProtocol {
 }
 
 public struct DefaultRepresentation: DefaultRepresentationProtocol {
-    public let representation: ((Date) -> String)
-    init(_ representation: @escaping ((Date) -> String)) {
+    public let representation: ((Date, Bundle) -> String)
+    init(_ representation: @escaping ((Date, Bundle) -> String)) {
         self.representation = representation
     }
 }
 
 public struct ThresholdRepresentation: ThresholdRepresentationProtocol {
-    public let representation: ((Date) -> String)
+    public let representation: ((Date, Bundle) -> String)
     public let upTo: Threshold
-    init(upTo: Threshold, _ representation: @escaping ((Date) -> String)) {
+    init(upTo: Threshold, _ representation: @escaping ((Date, Bundle) -> String)) {
         self.upTo = upTo
         self.representation = representation
     }

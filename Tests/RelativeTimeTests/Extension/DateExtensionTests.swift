@@ -47,7 +47,7 @@ class DateExtensionTests: XCTestCase {
     }
 
     func test_JustNow_Nothing() {
-        RelativeTime.defaultConfiguration.representations = Preset.chat2
+        RelativeTime.defaultConfiguration.representations = Preset.JoinUs.usersList
         XCTAssertEqual(now.rt.relative, "14:00")
         XCTAssertEqual(now.addingTimeInterval(-10).rt.relative, "13:59")
         XCTAssertNotEqual(now.addingTimeInterval(-11).rt.relative, "Just now")
@@ -92,10 +92,10 @@ class DateExtensionTests: XCTestCase {
 }
 
 struct MyDefault: DefaultRepresentationProtocol {
-    var representation: ((Date) -> String) { return { _ in "default(　´･‿･｀)" } }
+    var representation: ((Date, Bundle) -> String) { return { _ in "default(　´･‿･｀)" } }
 }
 struct MyRepresentation: ThresholdRepresentationProtocol {
-    var representation: ((Date) -> String) { return { _ in "(　´･‿･｀)" } }
+    var representation: ((Date, Bundle) -> String) { return { _ in "(　´･‿･｀)" } }
     var upTo: MyThreshold { return MyThreshold() }
 
 }
