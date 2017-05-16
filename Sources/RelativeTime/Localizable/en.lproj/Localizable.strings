@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  RelativeTime
+
+  Created by mono on 2017/05/16.
+
+*/
+"Just now" = "Just now";
+"Yesterday" = "Yesterday";
+"Monday" = "Monday";
+"Tuesday" = "Tuesday";
+"Wednesday" = "Wednesday";
+"Thursday" = "Thursday";
+"Friday" = "Friday";
+"Saturday" = "Saturday";
+"Sunday" = "Sunday";

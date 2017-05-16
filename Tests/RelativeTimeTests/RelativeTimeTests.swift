@@ -1,15 +1,11 @@
 import XCTest
+import Foundation
 @testable import RelativeTime
 
 class RelativeTimeTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(RelativeTime().text, "Hello, World!")
+    func testIsToday() {
+        
     }
 
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
+    static var allTests: [(String, (() -> ()))] = []
 }

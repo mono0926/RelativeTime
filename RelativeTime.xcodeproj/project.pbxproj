@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		FEF8E0C71ECAA8B700422D73 /* Sources.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF8E0C51ECAA8B700422D73 /* Sources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEF8E0D41ECAA8CB00422D73 /* RelativeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF8E0C21ECAA8B700422D73 /* RelativeTime.framework */; };
-		FEF8E0DB1ECAA9D200422D73 /* RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0DA1ECAA9D200422D73 /* RelativeTime.swift */; };
 		FEF8E0DE1ECAA9EE00422D73 /* RelativeTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0DD1ECAA9EE00422D73 /* RelativeTimeTests.swift */; };
+		FEF8E0E71ECAADBD00422D73 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0E51ECAAD7700422D73 /* DateExtensionTests.swift */; };
+		FEF8E0EE1ECAAFA400422D73 /* Date.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0EB1ECAAFA400422D73 /* Date.extension.swift */; };
+		FEF8E0EF1ECAAFA400422D73 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0EC1ECAAFA400422D73 /* Extension.swift */; };
+		FEF8E0F01ECAAFA400422D73 /* RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0ED1ECAAFA400422D73 /* RelativeTime.swift */; };
+		FEF8E0F41ECAB54700422D73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEF8E0F61ECAB54700422D73 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +31,16 @@
 		FEF8E0C21ECAA8B700422D73 /* RelativeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RelativeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF8E0C51ECAA8B700422D73 /* Sources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sources.h; sourceTree = "<group>"; };
 		FEF8E0C61ECAA8B700422D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEF8E0CF1ECAA8CB00422D73 /* RelativeTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelativeTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEF8E0CF1ECAA8CB00422D73 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF8E0D31ECAA8CB00422D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEF8E0DA1ECAA9D200422D73 /* RelativeTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeTime.swift; sourceTree = "<group>"; };
 		FEF8E0DD1ECAA9EE00422D73 /* RelativeTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeTimeTests.swift; sourceTree = "<group>"; };
+		FEF8E0E51ECAAD7700422D73 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		FEF8E0EB1ECAAFA400422D73 /* Date.extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.extension.swift; sourceTree = "<group>"; };
+		FEF8E0EC1ECAAFA400422D73 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		FEF8E0ED1ECAAFA400422D73 /* RelativeTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeTime.swift; sourceTree = "<group>"; };
+		FEF8E0F51ECAB54700422D73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FEF8E0F71ECAB56300422D73 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FEF8E11E1ECAD71A00422D73 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,7 @@
 		FEF8E0B61ECAA88300422D73 = {
 			isa = PBXGroup;
 			children = (
+				FEF8E11E1ECAD71A00422D73 /* Playground.playground */,
 				FEF8E0C41ECAA8B700422D73 /* Sources */,
 				FEF8E0D01ECAA8CB00422D73 /* Tests */,
 				FEF8E0C31ECAA8B700422D73 /* Products */,
@@ -65,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FEF8E0C21ECAA8B700422D73 /* RelativeTime.framework */,
-				FEF8E0CF1ECAA8CB00422D73 /* RelativeTimeTests.xctest */,
+				FEF8E0CF1ECAA8CB00422D73 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,7 +84,7 @@
 		FEF8E0C41ECAA8B700422D73 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FEF8E0DA1ECAA9D200422D73 /* RelativeTime.swift */,
+				FEF8E0E91ECAAFA400422D73 /* RelativeTime */,
 				FEF8E0C51ECAA8B700422D73 /* Sources.h */,
 				FEF8E0C61ECAA8B700422D73 /* Info.plist */,
 			);
@@ -92,9 +103,45 @@
 		FEF8E0DC1ECAA9EE00422D73 /* RelativeTimeTests */ = {
 			isa = PBXGroup;
 			children = (
+				FEF8E0E41ECAAD5E00422D73 /* Extension */,
 				FEF8E0DD1ECAA9EE00422D73 /* RelativeTimeTests.swift */,
 			);
 			path = RelativeTimeTests;
+			sourceTree = "<group>";
+		};
+		FEF8E0E41ECAAD5E00422D73 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FEF8E0E51ECAAD7700422D73 /* DateExtensionTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FEF8E0E91ECAAFA400422D73 /* RelativeTime */ = {
+			isa = PBXGroup;
+			children = (
+				FEF8E0F11ECAB4EC00422D73 /* Localizable */,
+				FEF8E0EA1ECAAFA400422D73 /* Extension */,
+				FEF8E0ED1ECAAFA400422D73 /* RelativeTime.swift */,
+			);
+			path = RelativeTime;
+			sourceTree = "<group>";
+		};
+		FEF8E0EA1ECAAFA400422D73 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FEF8E0EB1ECAAFA400422D73 /* Date.extension.swift */,
+				FEF8E0EC1ECAAFA400422D73 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FEF8E0F11ECAB4EC00422D73 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				FEF8E0F61ECAB54700422D73 /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +176,9 @@
 			productReference = FEF8E0C21ECAA8B700422D73 /* RelativeTime.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FEF8E0CE1ECAA8CB00422D73 /* RelativeTimeTests */ = {
+		FEF8E0CE1ECAA8CB00422D73 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEF8E0D71ECAA8CB00422D73 /* Build configuration list for PBXNativeTarget "RelativeTimeTests" */;
+			buildConfigurationList = FEF8E0D71ECAA8CB00422D73 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				FEF8E0CB1ECAA8CB00422D73 /* Sources */,
 				FEF8E0CC1ECAA8CB00422D73 /* Frameworks */,
@@ -142,9 +189,9 @@
 			dependencies = (
 				FEF8E0D61ECAA8CB00422D73 /* PBXTargetDependency */,
 			);
-			name = RelativeTimeTests;
+			name = Tests;
 			productName = Tests;
-			productReference = FEF8E0CF1ECAA8CB00422D73 /* RelativeTimeTests.xctest */;
+			productReference = FEF8E0CF1ECAA8CB00422D73 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -173,6 +220,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = FEF8E0B61ECAA88300422D73;
 			productRefGroup = FEF8E0C31ECAA8B700422D73 /* Products */;
@@ -180,7 +228,7 @@
 			projectRoot = "";
 			targets = (
 				FEF8E0C11ECAA8B700422D73 /* RelativeTime */,
-				FEF8E0CE1ECAA8CB00422D73 /* RelativeTimeTests */,
+				FEF8E0CE1ECAA8CB00422D73 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF8E0F41ECAB54700422D73 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEF8E0DB1ECAA9D200422D73 /* RelativeTime.swift in Sources */,
+				FEF8E0EE1ECAAFA400422D73 /* Date.extension.swift in Sources */,
+				FEF8E0EF1ECAAFA400422D73 /* Extension.swift in Sources */,
+				FEF8E0F01ECAAFA400422D73 /* RelativeTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF8E0DE1ECAA9EE00422D73 /* RelativeTimeTests.swift in Sources */,
+				FEF8E0E71ECAADBD00422D73 /* DateExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,13 +281,26 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		FEF8E0F61ECAB54700422D73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEF8E0F51ECAB54700422D73 /* en */,
+				FEF8E0F71ECAB56300422D73 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		FEF8E0BB1ECAA88300422D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SUPPORTED_PLATFORMS = "macosx watchsimulator watchos appletvsimulator appletvos iphoneossimulator iphoneos";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				SUPPORTED_PLATFORMS = "macosx watchsimulator watchos appletvsimulator appletvos iphonesimulator iphoneos";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -244,9 +309,10 @@
 		FEF8E0BC1ECAA88300422D73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SUPPORTED_PLATFORMS = "macosx watchsimulator watchos appletvsimulator appletvos iphoneossimulator iphoneos";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				SUPPORTED_PLATFORMS = "macosx watchsimulator watchos appletvsimulator appletvos iphonesimulator iphoneos";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -501,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEF8E0D71ECAA8CB00422D73 /* Build configuration list for PBXNativeTarget "RelativeTimeTests" */ = {
+		FEF8E0D71ECAA8CB00422D73 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEF8E0D81ECAA8CB00422D73 /* Debug */,
