@@ -12,16 +12,9 @@ import Foundation
 
 
 class DateExtensionTests: XCTestCase {
-    /** 2017-03-15 09:00:002017-03-25 14:00:00 */
-    private static let now = { () -> Date in
-        var dc = DateComponents()
-        dc.year = 2017
-        dc.month = 3
-        dc.day = 25
-        dc.hour = 14
-        return Calendar.current.date(from: dc)!
-    }()
-    private var now: Date = DateExtensionTests.now
+    /** 2017-03-25 14:00:00 */
+    static let now = TestUtil.now
+    private var now: Date = TestUtil.now
     private let date2017Start = { () -> Date in
         var dc = DateComponents()
         dc.year = 2017

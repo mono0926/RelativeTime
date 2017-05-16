@@ -12,6 +12,9 @@
 		FE99DF0F1ECB1FB700E8CA90 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE99DF0E1ECB1FB700E8CA90 /* Configuration.swift */; };
 		FE99DF111ECB1FE000E8CA90 /* RTBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE99DF101ECB1FE000E8CA90 /* RTBundle.swift */; };
 		FE99DF131ECB206F00E8CA90 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE99DF121ECB206F00E8CA90 /* Representation.swift */; };
+		FE99DF151ECB287F00E8CA90 /* Preset.JoinUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE99DF141ECB287F00E8CA90 /* Preset.JoinUs.swift */; };
+		FE99DF171ECB289500E8CA90 /* PresetJoinUsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE99DF161ECB289500E8CA90 /* PresetJoinUsTests.swift */; };
+		FE99DF191ECB291200E8CA90 /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE99DF181ECB291200E8CA90 /* TestUtil.swift */; };
 		FEF8E0C71ECAA8B700422D73 /* Sources.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF8E0C51ECAA8B700422D73 /* Sources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEF8E0D41ECAA8CB00422D73 /* RelativeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF8E0C21ECAA8B700422D73 /* RelativeTime.framework */; };
 		FEF8E0DE1ECAA9EE00422D73 /* RelativeTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E0DD1ECAA9EE00422D73 /* RelativeTimeTests.swift */; };
@@ -38,6 +41,9 @@
 		FE99DF0E1ECB1FB700E8CA90 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		FE99DF101ECB1FE000E8CA90 /* RTBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTBundle.swift; sourceTree = "<group>"; };
 		FE99DF121ECB206F00E8CA90 /* Representation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
+		FE99DF141ECB287F00E8CA90 /* Preset.JoinUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preset.JoinUs.swift; sourceTree = "<group>"; };
+		FE99DF161ECB289500E8CA90 /* PresetJoinUsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetJoinUsTests.swift; sourceTree = "<group>"; };
+		FE99DF181ECB291200E8CA90 /* TestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
 		FEF8E0C21ECAA8B700422D73 /* RelativeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RelativeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF8E0C51ECAA8B700422D73 /* Sources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sources.h; sourceTree = "<group>"; };
 		FEF8E0C61ECAA8B700422D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			children = (
 				FEF8E0E41ECAAD5E00422D73 /* Extension */,
 				FEF8E0DD1ECAA9EE00422D73 /* RelativeTimeTests.swift */,
+				FE99DF181ECB291200E8CA90 /* TestUtil.swift */,
 			);
 			path = RelativeTimeTests;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FEF8E0E51ECAAD7700422D73 /* DateExtensionTests.swift */,
+				FE99DF161ECB289500E8CA90 /* PresetJoinUsTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -147,6 +155,7 @@
 			children = (
 				FEF8E0EB1ECAAFA400422D73 /* Date.extension.swift */,
 				FEF8E0EC1ECAAFA400422D73 /* Extension.swift */,
+				FE99DF141ECB287F00E8CA90 /* Preset.JoinUs.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -278,6 +287,7 @@
 				FEF8E0EF1ECAAFA400422D73 /* Extension.swift in Sources */,
 				FE99DF0B1ECB1F3400E8CA90 /* Preset.swift in Sources */,
 				FEF8E0F01ECAAFA400422D73 /* RelativeTime.swift in Sources */,
+				FE99DF151ECB287F00E8CA90 /* Preset.JoinUs.swift in Sources */,
 				FE99DF111ECB1FE000E8CA90 /* RTBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF8E0DE1ECAA9EE00422D73 /* RelativeTimeTests.swift in Sources */,
+				FE99DF171ECB289500E8CA90 /* PresetJoinUsTests.swift in Sources */,
 				FEF8E0E71ECAADBD00422D73 /* DateExtensionTests.swift in Sources */,
+				FE99DF191ECB291200E8CA90 /* TestUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
