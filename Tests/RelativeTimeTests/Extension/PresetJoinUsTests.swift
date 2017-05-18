@@ -25,21 +25,16 @@ class PresetJoinUsTests: XCTestCase {
         RelativeTime.defaultConfiguration.representations = Preset.JoinUs.messagesList
     }
 
-    func testMessageList_today() {
-        XCTAssertEqual(now.rt.relative, "Today")
-        XCTAssertEqual(now.addingTimeInterval(-3600*14).rt.relative, "Today")
-        XCTAssertNotEqual(now.addingTimeInterval(-(3600*14+1)).rt.relative, "Today")
+    func testUsersList() {
+        XCTAssertEqual(Preset.JoinUs.usersList[0].representation(now, RTBundle.bundle), "14:00")
+        XCTAssertEqual(Preset.JoinUs.usersList[1].representation(now, RTBundle.bundle), "Saturday")
+        XCTAssertEqual(Preset.JoinUs.usersList[2].representation(now, RTBundle.bundle), "3/25")
     }
 
-    func testMessageList_yeasterday() {
-        XCTAssertEqual(now.addingTimeInterval(-(3600*14+1)).rt.relative, "Yesterday")
-        XCTAssertEqual(now.addingTimeInterval(-3600*38).rt.relative, "Yesterday")
-        XCTAssertNotEqual(now.addingTimeInterval(-(3600*38+1)).rt.relative, "Yesterday")
-    }
-
-    func test_Within7Days() {
-        XCTAssertEqual(now.addingTimeInterval(-(3600*38+1)).rt.relative, "Thursday")
-        XCTAssertEqual(now.addingTimeInterval(-(3600*(24*7+14))).rt.relative, "Saturday")
-        XCTAssertNotEqual(now.addingTimeInterval(-(3600*(24*7+14)+1)).rt.relative, "Saturday")
+    func testMessageList() {
+        XCTAssertEqual(Preset.JoinUs.messagesList[0].representation(now, RTBundle.bundle), "Today")
+        XCTAssertEqual(Preset.JoinUs.messagesList[1].representation(now, RTBundle.bundle), "Yesterday")
+        XCTAssertEqual(Preset.JoinUs.messagesList[2].representation(now, RTBundle.bundle), "Saturday")
+        XCTAssertEqual(Preset.JoinUs.messagesList[3].representation(now, RTBundle.bundle), "3/25")
     }
 }
