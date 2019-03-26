@@ -9,5 +9,5 @@
 import Foundation
 
 public class RTBundle {
-    static let bundle = Bundle(for: RTBundle.self)
+    public static let bundle = Bundle(for: RTBundle.self)
 }
